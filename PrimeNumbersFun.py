@@ -7,7 +7,7 @@ def checkIfDividedByThree(num):
     sum = 0
     for n in num1:
         sum += int(n)
-    if sum%3 == 0:
+    if sum % 3 == 0:
         return True
     else:
         return False
@@ -27,6 +27,7 @@ def isPrimeHighestSpeed(a):
         i += 2
     return True
 
+
 def isPrimeHighSpeed(a):
     if a == 2:
         return True
@@ -40,6 +41,7 @@ def isPrimeHighSpeed(a):
         i += 2
     return True
 
+
 def isPrimeMidSpeed(a):
     i = 2
     b = sqrt(a)
@@ -49,6 +51,7 @@ def isPrimeMidSpeed(a):
         i += 1
     return True
 
+
 def isPrimeLowSpeed(a):
     i = 2
     while i < a:
@@ -56,25 +59,6 @@ def isPrimeLowSpeed(a):
             return False
         i += 1
     return True
-
-def findSimpleUntilLow(until):
-    b = []
-    i = 1
-    while i < until:
-        if isPrimeLowSpeed(i):
-            b.append(i)
-        i += 1
-    return b
-
-
-def findSimpleUntilMid(until):
-    b = []
-    i = 1
-    while i < until:
-        if isPrimeMidSpeed(i):
-            b.append(i)
-        i += 1
-    return b
 
 
 def findSimpleUntil(until, mode):
@@ -92,10 +76,12 @@ def findSimpleUntil(until, mode):
         i += 1
     return b
 
-start_time = time.time()
+
 a = 1000000
-#findSimpleUntil(a, 1)
-print("--- %s seconds Low Speed math---" % (time.time() - start_time))
+# commented because take too much time to count
+# start_time = time.time()
+# findSimpleUntil(a, 1)
+# print("--- %s seconds Low Speed math---" % (time.time() - start_time))
 
 start_time = time.time()
 findSimpleUntil(a, 2)
@@ -108,4 +94,3 @@ print("--- %s seconds High Speed math---" % (time.time() - start_time))
 start_time = time.time()
 findSimpleUntil(a, 4)
 print("--- %s seconds Highest Speed math---" % (time.time() - start_time))
-
